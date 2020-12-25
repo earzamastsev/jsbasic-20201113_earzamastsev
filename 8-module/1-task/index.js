@@ -8,6 +8,7 @@ export default class CartIcon {
     this.startCartX = this.elem.getBoundingClientRect().x;
     this.startCartY = this.elem.getBoundingClientRect().y;
 
+
     this.addEventListeners();
   }
 
@@ -80,25 +81,6 @@ export default class CartIcon {
     }
   }
 
-    // let pageWidth = document.documentElement.clientWidth;
-    // let pageHeight = document.documentElement.clientHeight;
 
-    // let currentY = this.elem.getBoundingClientRect().y;
-    // let currentX = this.elem.getBoundingClientRect().x;
-    // let width = this.elem.getBoundingClientRect().width;
-    // let height = this.elem.getBoundingClientRect().height;
-
-    // let leftOffset = 20;
-    // let topOffset = 50;
-    // let rightOffset = 10;
-    // let leftElem = document.querySelector('.container');
-    // let leftShift = leftElem.getBoundingClientRect().x + leftElem.getBoundingClientRect().width + leftOffset;
-
-    // if (currentY < 0 || (currentX + width) > pageWidth) {
-    //   this.elem.style.cssText = "position:fixed";
-    //   this.elem.style.top = topOffset + 'px';
-    //   this.elem.style.left =  leftShift + 'px';
-      
-    // }
   }
 }
