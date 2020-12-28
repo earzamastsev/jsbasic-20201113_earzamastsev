@@ -113,7 +113,6 @@ export default class Cart {
   }
 
   renderModal() {
-    // let modal = new Modal();
     this.modal.setTitle('Your order');
     let modalBody = document.createElement('div');
     for (let elem of this.cartItems) {
