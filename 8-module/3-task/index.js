@@ -1,4 +1,5 @@
 export default class Cart {
+  
   // cartItems = []; // [product: {...}, count: N]
 
   constructor(cartIcon) {
