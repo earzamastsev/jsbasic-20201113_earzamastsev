@@ -20,7 +20,7 @@ export default class Cart {
       this.cartItems.push(newProduct);
       this.onProductUpdate(newProduct);
     } else {
-      let elem = this.cartItems.find(elem => elem.product.id === product.id);
+      let elem = this.cartItems.find(elem => elem.product.id == product.id);
       if (elem) {
         elem.count += 1;
         this.onProductUpdate(elem);

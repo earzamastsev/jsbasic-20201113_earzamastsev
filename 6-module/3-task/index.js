@@ -20,12 +20,7 @@ export default class Carousel {
     carousel.insertAdjacentHTML('afterBegin', innerTemplate);
 
     for (let slide of this.slides) {
-      const addProductEvent = new CustomEvent("product-add", 
-        { 
-          detail: slide.id,
-          bubbles: true 
-        }
-      );
+      
       const slideTemplate = `
       <div class="carousel__slide" data-id="${slide.id}">
         <img src="/assets/images/carousel/${slide.image}" class="carousel__img" alt="slide">
@@ -39,7 +34,15 @@ export default class Carousel {
       </div>
       `;
       carousel.querySelector('.carousel__inner').insertAdjacentHTML('beforeEnd', slideTemplate);
-      carousel.querySelector('button.carousel__button').addEventListener('click', (event) => {
+    }
+    for (let elem of carousel.querySelectorAll('button.carousel__button')) {
+      const addProductEvent = new CustomEvent("product-add", 
+        { 
+          detail: elem.closest(".carousel__slide").dataset.id,
+          bubbles: true 
+        }
+      );
+      elem.addEventListener('click', (event) => {
         carousel.dispatchEvent(addProductEvent);
       });
     }

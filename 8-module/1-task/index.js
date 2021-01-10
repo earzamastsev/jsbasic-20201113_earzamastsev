@@ -53,7 +53,7 @@ export default class CartIcon {
 
     let leftIndent = Math.min(leftShift, rightShift) + 'px';
     let isMobile = document.documentElement.clientWidth <= 767;
-    if (this.initialTopCoord == 0) this.initialTopCoord = this.elem.getBoundingClientRect().top + window.pageYOffset;
+    if (this.initialTopCoord == 0) {this.initialTopCoord = this.elem.getBoundingClientRect().top + window.pageYOffset;}
     
     if (isMobile) {
       Object.assign(this.elem.style, {
@@ -63,23 +63,23 @@ export default class CartIcon {
         zIndex: ''
       });
     } else {
-    if (window.pageYOffset > this.initialTopCoord) {
-      Object.assign(this.elem.style, {
-        position: 'fixed',
-        top: '50px',
-        zIndex: 1e3,
-        right: '10px',
-        left: leftIndent
-      });
-    } else {
-      Object.assign(this.elem.style, {
-        position: '',
-        top: '',
-        left: '',
-        zIndex: ''
-      });
+      if (window.pageYOffset > this.initialTopCoord) {
+        Object.assign(this.elem.style, {
+          position: 'fixed',
+          top: '50px',
+          zIndex: 1e3,
+          right: '10px',
+          left: leftIndent
+        });
+      } else {
+        Object.assign(this.elem.style, {
+          position: '',
+          top: '',
+          left: '',
+          zIndex: ''
+        });
+      }
     }
-  }
 
 
   }
